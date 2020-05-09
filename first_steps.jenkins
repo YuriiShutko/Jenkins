@@ -13,17 +13,17 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@QA \'hostname\''
+                sh 'ssh ubuntu@QA \'hostname\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh root@QA \'uptime\''
+                sh 'ssh ubuntu@QA \'uptime\''
             }
         }
         stage("Third step") {
             steps {
-                sh 'ssh root@QA \'whoami\''
+                sh 'ssh ubuntu@QA \'whoami\''
             }
         }
     }
