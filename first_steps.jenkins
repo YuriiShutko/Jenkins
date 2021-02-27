@@ -4,7 +4,7 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent { 
-        label 'master'
+        label 'Centos7_Slave'
         }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
@@ -13,17 +13,17 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh ubuntu@QA \'hostname\''
+                sh 'ssh root@client \'hostname\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh ubuntu@QA \'uptime\''
+                sh 'ssh root@client \'uptime\''
             }
         }
         stage("Third step") {
             steps {
-                sh 'ssh ubuntu@QA \'whoami\''
+                sh 'ssh root@client \'whoami\''
             }
         }
     }
