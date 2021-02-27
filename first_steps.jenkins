@@ -27,4 +27,12 @@ pipeline {
             }
         }
     }
+    post { 
+        success { 
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'This is a failure :('
+        }
+    }
 }
