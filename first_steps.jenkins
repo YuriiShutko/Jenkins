@@ -14,17 +14,17 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@client \'hostname\''
+                sh 'ssh cloud_user@client \'hostname\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh root@client \'uptime\''
+                sh 'ssh cloud_user@client \'uptime\''
             }
         }
         stage("Third step") {
             steps {
-                sh 'ssh root@client \'whoami\''
+                sh 'ssh cloud_user@client \'whoami\''
                 echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'
             }
         }
