@@ -24,7 +24,7 @@ pipeline {
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
-                dir ('docker/test-alpine') {
+                dir ('docker') {
                 	sh 'docker build -t yuriishutko/test-alpine:latest . '
                 }
             }
