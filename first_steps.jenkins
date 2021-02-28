@@ -20,6 +20,7 @@ pipeline {
         stage("Second step") {
             steps {
                 sh 'ssh cloud_user@client \'uptime\''
+                echo 'Name of the build is: $BUILD_TAG'
             }
         }
         stage("Third step") {
